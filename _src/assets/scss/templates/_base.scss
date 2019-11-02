@@ -1,0 +1,91 @@
+html{
+    font-size: 16px;
+  }
+  
+  body{
+    font-family: $font-text;
+    color:black;
+  
+    a{
+      color: inherit;
+      padding: 3px;
+      display: inline-block;
+  
+      &:hover{
+        color:red
+      }
+    }
+  }
+  
+  .wrapper{
+    padding: $main-padding;
+    min-height: 100vh; 
+  }
+  
+  
+  .header{
+    border-bottom: 1px solid $cool-grey;
+  
+    &__background{
+      background: url('../images/windows-bg.jpg');
+      width: 150px;
+      height: 75px;
+      background-size: cover;
+      background-position: center;
+      margin: auto;
+    }
+  
+    & .title{
+      text-align: center;
+    }
+  }
+  
+  .col-left{
+    display: flex;
+  
+    .autor-info,.links-group{
+      flex-basis: 50%;
+    }
+  
+    .mask{
+      border-radius: 100%;
+      width: 150px;
+      height: 150px;
+      overflow: hidden; 
+  
+      img{
+        border-style: none;
+        width: 140%;
+        transform: translateX(-46px);
+      }
+    }
+  }
+  
+  .footer{
+    border-top:1px solid $cool-grey;
+    padding-top:$main-padding;
+    padding-bottom:$main-padding;
+  }
+  
+  
+  @media all and (min-width:768px){
+    .wrapper{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap:20px;
+      border-left: 50px solid $cool-grey;
+    }
+  
+    .col-right{
+      grid-column: span 3;
+    }
+  
+    .col-left{
+      grid-column: span 1;
+      display: block;
+    }
+  
+    .footer{
+      grid-column: span 4;
+    }
+  }
